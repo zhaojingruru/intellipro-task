@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style type="text/css">
+<!DOCTYPE  html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>全屏grid</title>
+        <style type="text/css">
         .header {
-           grid-area: header;
+            grid-area: header;
         }
         .menu {
             grid-area: menu;
+            overflow: scroll;
         }
         .main {
             grid-area: main;
+            overflow: auto;
         }
         .right {
             grid-area: right;
@@ -17,33 +21,77 @@
         .footer {
             grid-area: footer;
         }
-        body {
+        .square-inner {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+        .grid {
+            box-sizing: border-box;
             display: grid;
             grid-template-areas:
                     'header header header header header header'
                     'menu main main main right right'
                     'menu footer footer footer footer footer';
+            grid-template-columns: repeat(6,  1fr);
+            grid-template-rows: repeat(3,  1fr);
             grid-gap: 10px;
             background-color: forestgreen;
+            grid-auto-flow: column;
             padding: 10px;
         }
-
-        body > div {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            padding: 20px 0;
-            font-size: 30px;
-        }
+        .grid>div { color: #fff;font-size: 50px;text-align: center;background-color: rgba(255, 255, 255, 0.8);}
     </style>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-
-<body>
-    <div class = "header">header</div>
-    <div class = "menu">menu</div>
-    <div class = "main">main</div>
-    <div class = "right">right</div>
-    <div class = "footer">footer</div>
-</body>
+    </head>
+    <body>
+        <div>
+            <div class="square-inner  grid">
+                <div class = "header">header</div>
+                <div class = "menu">
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                    <p>menu</p>
+                </div>
+                <div class = "main">
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                    <p>main</p>
+                </div>
+                <div class = "right">right</div>
+                <div class = "footer">footer</div>
+            </div>
+        </div>
+    </body>
 </html>
