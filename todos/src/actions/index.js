@@ -1,6 +1,6 @@
 let nextTodoId = 0;
 
-const Todo_API = "https://run.mocky.io/v3/d9d517c2-525c-4109-a0c5-a02230d1c934?mocky-delay=3000ms";
+const Todo_API = "https://run.mocky.io/v3/90e79f1c-67fe-4649-a199-e05152f6dc5d?mocky-delay=3000ms";
 
 export const addTodo = text => ({
   type: 'ADD_TODO',
@@ -29,7 +29,6 @@ export const fetchTodosFromServer = () => (dispatch, getState) => {
   return fetch(Todo_API)
     .then(response => response.json())
     .then(todos => {
-      console.log(todos,'todostodostodos');
       dispatch({type: 'FETCH_TODOS_SUCCESS', payload: todos});
     })
     .catch(error => {
